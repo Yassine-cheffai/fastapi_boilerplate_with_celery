@@ -10,6 +10,7 @@ services:
       - 8000:8000
     restart: always
     command: bash -c "uvicorn app.main:app --host 0.0.0.0 --port 8000 --reload"
+    # to use pdb, attach the service in a new terminal(docker attach app) because docker compose up don't allow it
     stdin_open: true
     tty: true
     env_file:
